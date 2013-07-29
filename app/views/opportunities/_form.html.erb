@@ -1,0 +1,144 @@
+<%= form_for @opportunity, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :opportunity_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :opportunity_number, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+
+    
+    
+    <%= f.label :is_open, :class => 'control-label' %>
+    <div class="controls">
+      <%#= f.text_field :is_open, :class => 'text_field', :placeholder => 'Inactive' %>
+      <%= f.check_box :is_open, "data-toggle" => "checkbox" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sales_rep_sso, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sales_rep_sso, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :salesforce_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :salesforce_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :stage_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :stage_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :close_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :close_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :probability, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :probability, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :amount_approval, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :amount_approval, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :support_segment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :support_segment, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :owner_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :owner_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :relational_junction_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :relational_junction_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :quotes_updated_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :quotes_updated_at, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :equifax_grade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :equifax_grade, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :latest_calculated_mrr_cents, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :latest_calculated_mrr_cents, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :latest_currency_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :latest_currency_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :vertical_market, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :vertical_market, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :academic_customer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :academic_customer, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :contract_term_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contract_term_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sale_type_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sale_type_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :account_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :account_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_error, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_error, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                opportunities_path, :class => 'btn' %>
+  </div>
+<% end %>

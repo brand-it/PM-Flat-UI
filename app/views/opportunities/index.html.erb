@@ -1,0 +1,82 @@
+<%- model_class = Opportunity -%>
+
+
+<i class="icon-camera-retro"></i> icon-camera-retro
+
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:opportunity_number) %></th>
+      <th><%= model_class.human_attribute_name(:is_open) %></th>
+      <th><%= model_class.human_attribute_name(:sales_rep_sso) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:salesforce_id) %></th>
+      <th><%= model_class.human_attribute_name(:stage_name) %></th>
+      <th><%= model_class.human_attribute_name(:close_date) %></th>
+      <th><%= model_class.human_attribute_name(:probability) %></th>
+      <th><%= model_class.human_attribute_name(:amount_approval) %></th>
+      <th><%= model_class.human_attribute_name(:support_segment) %></th>
+      <th><%= model_class.human_attribute_name(:owner_name) %></th>
+      <th><%= model_class.human_attribute_name(:relational_junction_id) %></th>
+      <th><%= model_class.human_attribute_name(:quotes_updated_at) %></th>
+      <th><%= model_class.human_attribute_name(:equifax_grade) %></th>
+      <th><%= model_class.human_attribute_name(:latest_calculated_mrr_cents) %></th>
+      <th><%= model_class.human_attribute_name(:latest_currency_id) %></th>
+      <th><%= model_class.human_attribute_name(:vertical_market) %></th>
+      <th><%= model_class.human_attribute_name(:academic_customer) %></th>
+      <th><%= model_class.human_attribute_name(:contract_term_name) %></th>
+      <th><%= model_class.human_attribute_name(:sale_type_name) %></th>
+      <th><%= model_class.human_attribute_name(:account_id) %></th>
+      <th><%= model_class.human_attribute_name(:last_error) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @opportunities.each do |opportunity| %>
+      <tr>
+        <td><%= link_to opportunity.id, opportunity_path(opportunity) %></td>
+        <td><%= opportunity.opportunity_number %></td>
+        <td><%= opportunity.is_open %></td>
+        <td><%= opportunity.sales_rep_sso %></td>
+        <td><%= opportunity.name %></td>
+        <td><%= opportunity.salesforce_id %></td>
+        <td><%= opportunity.stage_name %></td>
+        <td><%= opportunity.close_date %></td>
+        <td><%= opportunity.probability %></td>
+        <td><%= opportunity.amount_approval %></td>
+        <td><%= opportunity.support_segment %></td>
+        <td><%= opportunity.owner_name %></td>
+        <td><%= opportunity.relational_junction_id %></td>
+        <td><%= opportunity.quotes_updated_at %></td>
+        <td><%= opportunity.equifax_grade %></td>
+        <td><%= opportunity.latest_calculated_mrr_cents %></td>
+        <td><%= opportunity.latest_currency_id %></td>
+        <td><%= opportunity.vertical_market %></td>
+        <td><%= opportunity.academic_customer %></td>
+        <td><%= opportunity.contract_term_name %></td>
+        <td><%= opportunity.sale_type_name %></td>
+        <td><%= opportunity.account_id %></td>
+        <td><%= opportunity.last_error %></td>
+        <td><%=l opportunity.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_opportunity_path(opportunity), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      opportunity_path(opportunity),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_opportunity_path,
+            :class => 'btn btn-primary' %>
